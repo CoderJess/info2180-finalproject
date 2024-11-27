@@ -1,0 +1,155 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.header {
+    background-color: #1c2731;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa;
+    height: calc(100vh - 50px); 
+    position: fixed;
+    top: 50px;
+    left: 0;
+    padding-top: 20px;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #212529;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar a img {
+    margin-right: 10px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #e9ecef;
+}
+
+
+.main {
+    margin-left: 200px;
+    padding: 80px 20px 20px; 
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #343a40;
+}
+
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-filter {
+    background-color: #dee2e6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-filter:hover {
+    background-color: #cbd3da;
+}
+
+.btn-filter.active {
+    background-color: #5856d6;
+    color: white;
+}
+
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-table th, .contact-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.contact-table th {
+    background-color: #f1f1f1;
+    color: #343a40;
+}
+
+.contact-table td {
+    color: #495057;
+}
+
+.contact-table .btn-view {
+    color: #5856d6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-table .btn-view:hover {
+    text-decoration: underline;
+}
+
+.btn-add {
+    background-color: #5856d6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #4944b0;
+}
+
