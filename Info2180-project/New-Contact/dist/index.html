@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="https://e7.pngegg.com/pngimages/466/444/png-clipart-tattoo-flash-dolphin-cartoon-dolphin-marine-mammal-mammal.png" alt="Dolphin Logo" class="logo">
+        <span class="header-text">Dolphin CRM</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/Home/index.html" class="active"><img src="https://img.icons8.com/ios-filled/24/000000/home.png" alt="Home Icon"> Home</a>
+        <a href="/Add-User/index.html"><img src="https://img.icons8.com/ios-filled/24/000000/add-contact-to-company.png" alt="New Contact Icon"> New Contact</a>
+        <a href="/New-Contact/index.html"><img src="https://img.icons8.com/ios-filled/24/000000/user-group-man-man.png" alt="Users Icon"> Users</a>
+        <a href="/Login/index.html"><img src="https://img.icons8.com/ios-filled/24/000000/logout-rounded-left.png" alt="Logout Icon"> Login</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="card">
+            <h2>Create a New Contact</h2>
+            <form>
+                <!-- Title -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <select id="title" name="title">
+                        <option value="">Select Title</option>
+                        <option>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                        <option>Dr</option>
+                    </select>
+                </div>
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name">
+                </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <!-- Telephone -->
+                <div class="form-group">
+                    <label for="telephone">Telephone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Telephone">
+                </div>
+                <!-- Company -->
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Company">
+                </div>
+                <!-- Type -->
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type">
+                        <option value="">Select Type</option>
+                        <option>Sales Lead</option>
+                        <option>Support</option>
+                    </select>
+                </div>
+                <!-- Assigned To -->
+                <div class="form-group">
+                    <label for="assignedTo">Assigned To</label>
+                    <select id="assignedTo" name="assignedTo">
+                        <option value="">Select a User</option>
+                    </select>
+                </div>
+                <!-- Save Button -->
+                <button type="submit" class="btn-save">Save</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
