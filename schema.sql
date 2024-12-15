@@ -9,22 +9,23 @@ USE dolphin_crm;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,
+  `title` char(35) NOT NULL default '',
   `firstname` varchar(35) NOT NULL default '',
   `lastname` varchar(35) NOT NULL default '',
   `password` varchar(20) NOT NULL default '',
-  `email` varchar(35) NOT NULL default '',
+  `email` varchar(255) NOT NULL default '',
   `role` varchar(35) NOT NULL default '',
   `created_at` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `users` WRITE;
 
-INSERT INTO `users` VALUES (1,'John','Doe','password123','admin@project2.com', 'admin', '2024-11-25 16:18:00'),
-(2, 'Jack', 'Daniels', 'jdaniels2', 'jdaniels@project2.com', 'user', '2024-11-26 17:19:00'),
-(3, 'Cat', 'Valentine', 'catvalentine3', 'catvalentine@project2.com', 'user', '2024-11-27 17:00:00'),
-(4, 'Blade', 'Daywalker', 'bladedaywalker4', 'bladedaywalker@project2.com', 'user', '2024-11-29 13:00:00'),
-(5, 'Black', 'Widow', 'backwidow5', 'blackwidow@project2.com', 'user', '2024-11-29 19:00:00');
+INSERT INTO `users` VALUES (1,'Mr', 'John','Doe','password123','admin@project2.com', 'admin', '2024-11-25 16:18:00'),
+(2, 'Mr', 'Jack', 'Daniels', 'jdaniels2', 'jdaniels@project2.com', 'user', '2024-11-26 17:19:00'),
+(3, 'Ms', 'Cat', 'Valentine', 'catvalentine3', 'catvalentine@project2.com', 'member', '2024-11-27 17:00:00'),
+(4, 'Ms', 'Blade', 'Daywalker', 'bladedaywalker4', 'bladedaywalker@project2.com', 'member', '2024-11-29 13:00:00'),
+(5,'Mr',  'Black', 'Widow', 'backwidow5', 'blackwidow@project2.com', 'member', '2024-11-29 19:00:00');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `contacts`;
@@ -33,7 +34,7 @@ CREATE TABLE `contacts` (
   `title` char(35) NOT NULL default '',
   `firstname` char(35) NOT NULL default '',
   `lastname` char(35) NOT NULL default '',
-  `email` char(20) NOT NULL default '',
+  `email` char(255) NOT NULL default '',
   `telephone` char(12) NOT NULL default '',
   `company` char(35) NOT NULL default '',
   `type` char(20) NOT NULL default '',
@@ -42,7 +43,7 @@ CREATE TABLE `contacts` (
   `craated_at` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `updated_at` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `contacts` WRITE;
 
