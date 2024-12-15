@@ -5,19 +5,29 @@ include 'db.php'; // Include database connection
 
 // Check if the user is already logged in
 if (isset($_SESSION['user_id'])) {
-    header('Location: Home/dashboard.php');
+    header('Location: ../Home/dashboard.php');
     exit();
 }
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
+    $email = strtolower(trim($_POST['email'])); // Normalize email
     $password = $_POST['password'];
 
     // Prepare the SQL statement to prevent SQL injection
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+    
+    if (!$stmt) {
+        error_log("Prepare failed: " . $conn->error);
+        die("Database query error.");
+    }
+
     $stmt->bind_param('s', $email);
-    $stmt->execute();
+    
+    if (!$stmt->execute()) {
+        error_log("Execution failed: " . $stmt->error);
+    }
+
     $stmt->store_result();
 
     // Check if user exists
@@ -29,13 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $hashed_password)) {
             // Password is correct, set session variables
             $_SESSION['user_id'] = $user_id;
-            header('Location: Home/dashboard.php');
+            header('Location: ../Home/dashboard.php');
             exit();
         } else {
             $error = "Invalid email or password.";
+            error_log("Invalid password attempt for email: $email");
         }
     } else {
         $error = "Invalid email or password.";
+        error_log("No user found with email: $email");
     }
 
     $stmt->close();
@@ -90,44 +102,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php
 $conn->close();
 
-/*
-session_start();
-
-if (isset($_SESSION['id'])){
-    header('Location: dashboard.php');
-    exit();
-}
-
-$error = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    include 'db.php';
-
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($user_id, $hashed_password);
-        $stmt->fetch();
-
-        // Verify the password
-        if (password_verify($password, $hashed_password)) {
-            // Store session variables
-            $_SESSION['user_id'] = $user_id;
-            header('Location: dashboard.php');
-            exit();
-        } else {
-            $error = 'Invalid password.';
-        }
-    } else {
-        $error = 'No user found with that email address.';
-    }
-
-    $stmt->close();
-}*/
 ?>
