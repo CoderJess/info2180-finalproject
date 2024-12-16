@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Prepare SQL statement
         $stmt = $conn->prepare("INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())");
-        $created_by = $_SESSION['user_id']; // Assuming user_id is stored in session
+        $created_by = $_SESSION['user_id'];
 
         if ($stmt) {
             $stmt->bind_param('ssssssssi', $title, $firstName, $lastName, $email, $telephone, $company, $type, $assignedTo, $created_by);
@@ -47,5 +47,5 @@ $conn->close();
 
 <!-- Redirect back to the contact creation page -->
 <script>
-    window.location.href = 'create_contact_form.php?feedback=<?php echo urlencode($feedback); ?>';
+    window.location.href = 'new-contact.php?feedback=<?php echo urlencode($feedback); ?>';
 </script>

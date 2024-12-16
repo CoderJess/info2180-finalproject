@@ -50,7 +50,7 @@ $result = $stmt->get_result();
     <aside class="sidebar">
         <a href="dashboard.php" class="active"><img src="https://img.icons8.com/ios-filled/24/000000/home.png" alt="Home Icon"> Home</a>
         <a href="../New-Contact/new-contact.php"><img src="https://img.icons8.com/ios-filled/24/000000/add-contact-to-company.png" alt="New Contact Icon"> New Contact</a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/user-group-man-man.png" alt="Users Icon"> Users</a>
+        <a href="../Users/view_users.php"><img src="https://img.icons8.com/ios-filled/24/000000/user-group-man-man.png" alt="Users Icon"> Users</a>
         <a href="../logout.php"><img src="https://img.icons8.com/ios-filled/24/000000/logout-rounded-left.png" alt="Logout Icon"> Logout</a>
     </aside>
 
@@ -59,7 +59,7 @@ $result = $stmt->get_result();
         <div class="card">
             <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                 <h2>Dashboard</h2>
-                <button class="btn-add" onclick="location.href='add_contact.php'">+ Add Contact</button>
+                <button class="btn-add" onclick="location.href='../New-Contact/new-contact.php'">+ Add Contact</button>
             </div>
             <div class="filters" style="margin: 20px 0;">
                 <strong>Filter By:</strong>
@@ -88,7 +88,7 @@ $result = $stmt->get_result();
                                 <td><?php echo htmlspecialchars($row['email']); ?></td>
                                 <td><?php echo htmlspecialchars($row['company']); ?></td>
                                 <td><?php echo htmlspecialchars($row['type']); ?></td>
-                                <td><a href="view_contact.php?id=<?php echo $row['id']; ?>">View</a></td>
+                                <td><a href="../View_Contact_Details/contact_details.php?id=<?php echo $row['id']; ?>" class="view-link">View</a></td>
                             </tr>
                         <?php endwhile; ?>
                     <?php else: ?>

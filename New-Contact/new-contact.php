@@ -16,8 +16,8 @@
      <!-- Sidebar -->
      <div class="sidebar">
         <a href="../Home/dashboard.php" class="active"><img src="https://img.icons8.com/ios-filled/24/000000/home.png" alt="Home Icon"> Home</a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/add-contact-to-company.png" alt="New Contact Icon"> New Contact</a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/user-group-man-man.png" alt="Users Icon"> Users</a>
+        <a href="new-contact.php"><img src="https://img.icons8.com/ios-filled/24/000000/add-contact-to-company.png" alt="New Contact Icon"> New Contact</a>
+        <a href="../Users/view_users.php"><img src="https://img.icons8.com/ios-filled/24/000000/user-group-man-man.png" alt="Users Icon"> Users</a>
         <a href="../logout.php"><img src="https://img.icons8.com/ios-filled/24/000000/logout-rounded-left.png" alt="Logout Icon"> Logout</a>
     </div>
 
@@ -90,7 +90,6 @@
                         ?>
                     </select>
                 </div>
-                <!-- Save Button -->
                 <button type="submit" class="btn-save">Save</button>
             </form>
         </div>
